@@ -44,7 +44,7 @@ header input {
 header button {
     background-color: transparent;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgb(211, 81, 81);
     font-size: 1rem;
     margin-left: 5px;
 }
@@ -133,6 +133,6 @@ header button {
 }
 
 .meal-body .fav-btn.active {
-    color: #0a0e06;
+    color: #f9af19;
 }
 

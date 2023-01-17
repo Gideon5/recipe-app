@@ -41,5 +41,24 @@ function addMeal(mealData, random = false) {
                 </div>
             `
             console.log(meals.appendChild(meal))
+
+           btn =  meals.querySelector('.meal-body .fav-btn')
+           btn.addEventListener('click', () => {
+                btn.classList.toggle("active")
+            })
             
+}
+
+
+function addMealToLocalStorage(mealId) {
+    const mealIds = getMealsFromLocalStorage()
+
+    localStorage.setItem('mealIds', JSON.stringify([...mealIds,mealId]))
+}
+
+function getMealFromLocalStorage() {
+    const mealsIds = JSON.parse(localStorage.getItem('mealIds')) 
+
+    return mealsIds
+
 }
