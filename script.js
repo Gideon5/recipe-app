@@ -84,8 +84,4 @@ function getMealFromLocalStorage() {
     getItem("mealIds")) 
 
     return mealIds === null ? [] : mealIds
-
 }
-
-
-
