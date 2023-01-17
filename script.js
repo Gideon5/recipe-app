@@ -45,7 +45,7 @@ function addMeal(mealData, random = false) {
 
            btn =  meals.querySelector('.meal-body .fav-btn')
            btn.addEventListener('click', () => {
-            if(btn.classList.contains('active')) {
+            if(btn.classList.contains("active")) {
                 removeMealFromLocalStorage(mealData.idMeal)
                 btn.classList.remove("active")
 
@@ -62,16 +62,15 @@ function addMeal(mealData, random = false) {
 
 
 function addMealToLocalStorage(mealId) {
-    const mealIds = getMealsFromLocalStorage()
+    const mealIds = getMealFromLocalStorage()
 
-    localStorage.setItem("mealIds", JSON.stringify([...mealIds,mealId]))
+    localStorage.setItem("mealIds", JSON.stringify([...mealIds, mealId]))
 }
 
 
 function removeMealFromLocalStorage(mealId) {
 
     const mealIds = getMealFromLocalStorage()
-    console.log(mealIds)
 
     localStorage.setItem(
         "mealIds",
@@ -81,7 +80,8 @@ function removeMealFromLocalStorage(mealId) {
 }
 
 function getMealFromLocalStorage() {
-    const mealIds = JSON.parse(localStorage.getItem("mealIds")) 
+    const mealIds = JSON.parse(localStorage.
+    getItem("mealIds")) 
 
     return mealIds === null ? [] : mealIds
 
