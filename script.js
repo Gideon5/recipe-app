@@ -64,19 +64,28 @@ function addMeal(mealData, random = false) {
 function addMealToLocalStorage(mealId) {
     const mealIds = getMealsFromLocalStorage()
 
-    localStorage.setItem('mealIds', JSON.stringify([...mealIds,mealId]))
+    localStorage.setItem("mealIds", JSON.stringify([...mealIds,mealId]))
 }
 
-function getMealFromLocalStorage() {
-    const mealsIds = JSON.parse(localStorage.getItem('mealIds')) 
-
-    return mealsIds
-
-}
 
 function removeMealFromLocalStorage(mealId) {
 
     const mealIds = getMealFromLocalStorage()
+    console.log(mealIds)
 
-    localStorage.setItem('mealIds', JSON.stringify(mealIds.filter((id) => id !== mealId)))
+    localStorage.setItem(
+        "mealIds",
+         JSON.stringify(mealIds.filter((id) => id
+        !== mealId))
+        )
 }
+
+function getMealFromLocalStorage() {
+    const mealIds = JSON.parse(localStorage.getItem("mealIds")) 
+
+    return mealIds === null ? [] : mealIds
+
+}
+
+
+
