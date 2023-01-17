@@ -62,3 +62,8 @@ function getMealFromLocalStorage() {
     return mealsIds
 
 }
+
+function removeMealFromLocalStorage(mealId) {
+    const mealIds = getMealsFromLocalStorage()
+    localStorage.setItem('mealIds', JSON.stringify(mealsIds.filter(id => id !== mealId)))
+}
